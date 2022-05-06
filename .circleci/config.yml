@@ -2,14 +2,14 @@ version: 2.1
 
 jobs:
   build:
-    working_directory: /home/xub/Desktop/flaskapp
+    working_directory: ~/circleci-python
     docker:
       - image: "circleci/python:3.6.4"
     steps:
       - checkout
       - run: python3 run.py
   test:
-    working_directory: /home/xub/Desktop/flaskapp/tests
+    working_directory: ~/circleci-python/tests
     docker:
       - image: "circleci/python:3.6.4"
     steps:
