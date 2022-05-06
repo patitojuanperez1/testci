@@ -7,9 +7,10 @@ jobs:
       - image: "circleci/python:3.6.4"
     steps:
       - checkout
-      - command: python3 -m virtualenv venv
-      - command: ./venv/bin/activate
-      - command: pip install -r requirements.txt
+      - command: | 
+        python3 -m virtualenv venv
+        ./venv/bin/activate
+        pip install -r requirements.txt
       - run: python3 run.py
   test:
     working_directory: ~/circleci-python/tests
